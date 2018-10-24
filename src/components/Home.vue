@@ -62,7 +62,7 @@ export default {
       top:0;
       bottom:0;
       height:100%;
-      background:#e5e9f2;
+      background:#fff;
     }
 
     .admin-content{

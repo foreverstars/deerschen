@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="header-title">
-       <router-link to="/home">Deerschen后台管理</router-link>
+      <router-link to="/home">Deerschen后台管理</router-link>
     </div>
     <div class="container-actions" v-if="!isLogin">
       <router-link to="/login">登陆</router-link>

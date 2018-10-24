@@ -22,7 +22,9 @@ export default {
           title: '角色',
           key: 'isAdmin',
           render: (h, params) => {
-            return adminOptions.find(v => params.row.isAdmin === v.value).name
+            const value = adminOptions.find(v => params.row.isAdmin === v.value) ?
+              adminOptions.find(v => params.row.isAdmin === v.value).name : ''
+            return h('span', value)
           }
         },
         {

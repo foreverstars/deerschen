@@ -67,6 +67,10 @@ export default {
   methods: {
     ...mapActions(['saveArticle']),
     publishArticle() {
+      if (!this.form.title && !this.form.type &&　!this.form.content) {
+        this.$Message.warning('请填写标题、内容、分类')
+        return
+      }
       const word = this.handleTrim(this.editor.txt.text())
       this.form.content = this.editor.txt.html()
       this.form.brief = word.length > 100 ? word.substring(0, 100) : word

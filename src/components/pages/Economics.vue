@@ -22,12 +22,10 @@ export default {
           title: '类别',
           key: 'type',
           render: (h, params) => {
-            return typeOptions.find(v => params.row.type === v.value).name
+            const value = typeOptions.find(v => params.row.type === v.value) ?
+              typeOptions.find(v => params.row.type === v.value).name : ''
+            return h('span', value)
           }
-        },
-        {
-          title: '作者',
-          key: 'author'
         },
         {
           title: '创建时间',
