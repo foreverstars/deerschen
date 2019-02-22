@@ -44,10 +44,10 @@ export default {
                 },
                 on: {
                   click: () => {
-                    this.show(params.row)
+                    this.delete(params.row)
                   }
                 }
-              }, '修改')
+              }, '删除')
             ]);
           }
         }
@@ -57,31 +57,25 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['getUserList', 'setUserNormal', 'setUserAdmin']),
-    show(row) {
-      const content = row.isAdmin === 1 ? '取消管理员身份?' : '设置为管理员?'
+    ...mapActions(['getCommentList', 'deleteComment']),
+    delete(row) {
       this.$Modal.confirm({
         title: '提示',
-        content: content,
+        content: '确定要删除该评论吗？',
         onOk: () => {
-          if (row.isAdmin === 1) {
-            this.setUserNormal(row).then(() => {
-              this.getList()
-            })
-          } else {
-            this.setUserAdmin(row).then(() => {
-              this.getList()
-            })
-          }
+          this.deleteComment({
+            _id: row._id
+          }).then(() => {
+
+          })
         },
         onCancel: () => {
           console.log('cancel')
         }
       })
     },
-
-    getList () {
-      this.getUserList().then(res => {
+    getList(row) {
+      this.getCommentList().then(res => {
         if (res.data.code === 0) {
           this.data = res.data.data
         } else {

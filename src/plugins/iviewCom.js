@@ -18,7 +18,8 @@ import {
   Select,
   Option,
   Switch,
-  Card
+  Card,
+  Modal
 } from 'iview'
 
 
@@ -41,3 +42,4 @@ Vue.component('Select', Select)
 Vue.component('Option', Option)
 Vue.component('i-switch', Switch)
 Vue.component('Card', Card)
+Vue.component('Modal', Modal)

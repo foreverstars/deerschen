@@ -14,7 +14,7 @@
           </FormItem>
           <FormItem prop="password">
             <Input type="password" size="large" v-model="formInline.password" placeholder="Password" autocomplete="off">
-              <Icon type="ios-locked-outline" slot="prepend"></Icon>
+              <Icon type="ios-lock-outline" slot="prepend"></Icon>
             </Input>
           </FormItem>
           <FormItem>
@@ -23,7 +23,7 @@
         </Form>
       </div>
       <div class="register-info-r">
-        <p>已有账号? <router-link to="/login">立即登录</router-link>        
+        <p>已有账号? <router-link to="/login">立即登录</router-link>
         </p>
       </div>
     </div>

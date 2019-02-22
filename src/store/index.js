@@ -52,6 +52,14 @@ const store = new Vuex.Store({
 
     getUserList ({ commit }) {
       return axios.post(Api.getUserList)
+    },
+
+    setUserAdmin ({ commit }) {
+      return axios.post(Api.setUserAdmin)
+    },
+
+    setUserNormal ({ commit }) {
+      return axios.post(Api.setUserNormal)
     }
   }
 })

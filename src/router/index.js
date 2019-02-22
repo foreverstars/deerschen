@@ -9,6 +9,7 @@ import NotFound from '@/components/NotFound.vue'
 import Article from '@/components/pages/Article.vue'
 import Beauty from '@/components/pages/Beauty.vue'
 import User from '@/components/pages/User.vue'
+import ArticleComment from '@/components/pages/Comment.vue'
 
 Vue.use(Router)
 
@@ -34,7 +35,11 @@ const routes = [
         path: 'user',
         name: 'User',
         component: User
-      },
+      },{
+        path: 'comment',
+        name: 'Comment',
+        component: ArticleComment
+      }
     ]
   },
   {
