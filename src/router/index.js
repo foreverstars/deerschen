@@ -11,6 +11,8 @@ import Beauty from '@/components/pages/Beauty.vue'
 import User from '@/components/pages/User.vue'
 import ArticleComment from '@/components/pages/Comment.vue'
 
+import SetType from '@/components/pages/SetType.vue'
+
 Vue.use(Router)
 
 const routes = [
@@ -39,6 +41,10 @@ const routes = [
         path: 'comment',
         name: 'Comment',
         component: ArticleComment
+      },{
+        path: 'setType',
+        name: 'setType',
+        component: SetType
       }
     ]
   },

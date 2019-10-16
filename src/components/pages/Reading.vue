@@ -52,7 +52,20 @@ export default {
                   }
                 }
               }, '查看')
-            ]);
+            ,  h('Button', {
+                props: {
+                  type: 'primary',
+                  size: 'small'
+                },
+                style: {
+                  marginRight: '5px'
+                },
+                on: {
+                  click: () => {
+                    this.delete(params.row)
+                  }
+                }
+              }, '删除')]);
           }
         }
       ],
@@ -71,10 +84,33 @@ export default {
     })
   },
   methods: {
-    ...mapActions(['getTypeList']),
+    ...mapActions(['getTypeList', 'deleteArticle']),
     show(row) {
       console.log(row.id)
-    }
+    },
+    delete(row) {
+      this.$Modal.confirm({
+        title: '提示',
+        content: '确定要删除该文章吗？',
+        onOk: () => {
+          this.deleteArticle({
+            _id: row._id
+          }).then(() => {
+            this.getTypeList({
+              type: 'reading'
+            }).then(res => {
+              if (res.data.code === 0) {
+                this.data = res.data.data
+              } else {
+              }
+            })
+          })
+        },
+        onCancel: () => {
+          console.log('cancel')
+        }
+      })
+    },
   }
 }
 </script>

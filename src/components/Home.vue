@@ -13,6 +13,7 @@
               <MenuItem name="article">文章管理</MenuItem>
               <MenuItem name="beauty">个人分类管理</MenuItem>
               <MenuItem name="comment">评论管理</MenuItem>
+              <MenuItem name="setType">设置分类</MenuItem>
             </Submenu>
             <Submenu name="user">
               <template slot="title">

@@ -50,6 +50,11 @@ const store = new Vuex.Store({
       return axios.post(Api.getTypeList, filter)
     },
 
+    addType ({ commit }, filter) {
+      return axios.post(Api.addType, filter)
+    },
+
+
     getUserList ({ commit }) {
       return axios.post(Api.getUserList)
     },
@@ -60,6 +65,12 @@ const store = new Vuex.Store({
 
     setUserNormal ({ commit }) {
       return axios.post(Api.setUserNormal)
+    },
+    getCommentList ({}) {
+
+    },
+    deleteArticle ({ commit }) {
+      return axios.post(Api.deleteArticle)
     }
   }
 })

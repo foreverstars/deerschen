@@ -43,3 +43,4 @@ Vue.component('Option', Option)
 Vue.component('i-switch', Switch)
 Vue.component('Card', Card)
 Vue.component('Modal', Modal)
+
